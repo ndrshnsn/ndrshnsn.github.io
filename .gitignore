@@ -1,0 +1,5 @@
+personal/_site/
+personal/.sass-cache/
+personal/.jekyll-cache/
+personal/.jekyll-metadata
+personal/node_modules
