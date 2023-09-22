@@ -26,6 +26,7 @@ concurrency:
 defaults:
   run:
     shell: bash
+    working-directory: ./personal
 
 jobs:
   # Build job
