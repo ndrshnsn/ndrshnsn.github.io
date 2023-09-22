@@ -1,0 +1,10 @@
+[submodule "personal/themes/hugo-notepadium-mod"]
+	path = personal/themes/hugo-notepadium-mod
+	url = https://github.com/qdzhang/hugo-notepadium-mod.git
+[submodule "personal/themes/congo"]
+	path = personal/themes/congo
+	url = https://github.com/jpanther/congo.git
+	branch = stable
+[submodule "personal/themes/hugo-bearcub"]
+	path = personal/themes/hugo-bearcub
+	url = https://github.com/clente/hugo-bearcub
