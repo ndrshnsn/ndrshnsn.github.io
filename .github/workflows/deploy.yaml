@@ -33,7 +33,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       HUGO_VERSION: 0.115.4
-      working-directory: ./personal
     steps:
       - name: Install Hugo CLI
         run: |
