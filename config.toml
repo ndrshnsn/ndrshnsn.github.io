@@ -13,9 +13,9 @@ noClasses = false
 [params]
 author = "Andreas Hansen"
 # license = '<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA-4.0</a>'
-description = "John Doe's personal website"
+description = "Andreas Hansen • Software Development"
 keywords = "blog,developer,personal"
-info = ["Software Engineer", "Full Stack Developer", "Coffee & Open Source Addict"]
+info = ["Full Stack Software Developer", "Coffee & Open Source Addict"]
 gravatar = "ndrshnsn@gmail.com"
 dateFormat = "January 2, 2006"
 since = 2012
