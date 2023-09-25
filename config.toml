@@ -1,84 +1,163 @@
-# Basic config
-baseURL = "https://andreas.com.br"
-theme = "hugo-bearcub"
-copyright = "Andreas Hansen (CC BY 4.0)"
+baseURL = "https://andreashansen.dev"
+title = "Andreas Hansen"
+languageCode = "en"
 defaultContentLanguage = "en"
+paginate = 20
+enableEmoji = true
+# Enable Disqus comments
+# disqusShortname = "yourdiscussshortname"
 
-# Generate a nice robots.txt for SEO
-enableRobotsTXT = true
-
-# Your name. For more information on why this must be a list, see
-# https://discourse.gohugo.io/t/site-author-usage/31459/8
-[author]
-  name = "Andreas Hansen"
-
-# Setup syntax highlighting without inline styles. For more information about
-# why you'd want to avoid inline styles, see
-# https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/style-src#unsafe_inline_styles
-[markup]
-  [markup.highlight]
-    lineNos = true
-    lineNumbersInTable = false
-    # This allows Bear Cub to use a variation of Dracula that is more accessible
-    # to people with poor eyesight. For more information about color contrast
-    # and accessibility, see https://web.dev/color-and-contrast-accessibility/
-    noClasses = false
-
-# Multilingual mode config. More for information about how to setup translation,
-# see https://gohugo.io/content-management/multilingual/
-[languages]
-  [languages.en]
-    title = "Bear Cub"
-    languageName = "en-US 🇺🇸"
-    LanguageCode = "en-US"
-    contentDir = "content"
-    [languages.en.params]
-      blogPath = "/blog" # Path to your blog section (used by RSS)
-      madeWith = "Made with [Bear Cub](https://github.com/clente/hugo-bearcub)"
-  [languages.pt]
-    title = "Bear Cub"
-    languageName = "pt-BR 🇧🇷"
-    LanguageCode = "pt-BR"
-    contentDir = "content.pt"
-    [languages.pt.params]
-      blogPath = "/pt/blog" # Path to your blog section (used by RSS)
-      madeWith = "Feito com [Bear Cub](https://github.com/clente/hugo-bearcub)"
+[markup.highlight]
+noClasses = false
 
 [params]
-  # The description of your website
-  description = "Bear Cub Demo"
+author = "Andreas Hansen"
+# license = '<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA-4.0</a>'
+description = "John Doe's personal website"
+keywords = "blog,developer,personal"
+info = ["Software Engineer", "Full Stack Developer", "Coffee & Open Source Addict"]
+gravatar = "ndrshnsn@gmail.com"
+dateFormat = "January 2, 2006"
+since = 2012
+# Right To Left, shift content direction for languagues such as Arabic
+rtl = false
 
-  # The path to your favicon
-  favicon = "images/favicon.png"
+# Specify light/dark colorscheme
+# Supported values:
+# "auto" (use preference set by browser)
+# "dark" (dark background, light foreground)
+# "light" (light background, dark foreground) (default)
+colorScheme = "auto"
 
-  # These images will show up when services want to generate a preview of a link
-  # to your site. Ignored if `generateSocialCard = true`. For more information
-  # about previews, see https://gohugo.io/templates/internal#twitter-cards and
-  # https://gohugo.io/templates/internal#open-graph
-  images = ["/hugo-bearcub/images/share.webp"]
+# Hide the toggle button, along with the associated vertical divider
+hideColorSchemeToggle = false
 
-  # This title is used as the site_name on the Hugo's internal opengraph
-  # structured data template
-  title = "Bear Cub"
+# Series see also post count
+maxSeeAlsoItems = 5
 
-  # Dates are displayed following the format below. For more information about
-  # formatting, see https://gohugo.io/functions/format/
-  dateFormat = "2006-01-02"
+# Custom CSS
+customCSS = []
 
-  # If your blog is multilingual but you haven't translated a page, this theme
-  # will create a disabled link. By setting `hideUntranslated` to true, you can
-  # have the theme simply not show any link
-  hideUntranslated = false
+# Custom SCSS, file path is relative to Hugo's asset folder (default: {your project root}/assets)
+customSCSS = []
 
-  # (EXPERIMENTAL) This theme is capable of dynamically generating social cards
-  # for posts that don't have `images` defined in their front matter; By setting
-  # `generateSocialCard` to false, you can prevent this behavior. For more
-  # information see layouts/partials/seo_tags.html
-  generateSocialCard = true
+# Custom JS
+customJS = []
 
-  # Social media. Delete any item you aren't using to make sure it won't show up
-  # in your website's metadata.
-  [social]
-    email = "ndrshnsn@gmail.com" # Added to the navbar so readers can reply to posts
-    twitter = "ndrshnsn" # Twitter handle (without '@')
-    
+# Custom remote JS files
+customRemoteJS = []
+
+# If you want to implement a Content-Security-Policy, add this section
+# [params.csp]
+# childsrc = ["'self'"]
+# fontsrc = ["'self'", "https://fonts.gstatic.com", "https://cdn.jsdelivr.net/"]
+# formaction = ["'self'"]
+# framesrc = ["'self'", "https://www.youtube.com"]
+# imgsrc = ["'self'"]
+# objectsrc = ["'none'"]
+# stylesrc = [
+#   "'self'",
+#   "'unsafe-inline'",
+#   "https://fonts.googleapis.com/",
+#   "https://cdn.jsdelivr.net/",
+# ]
+# scriptsrc = [
+#   "'self'",
+#   "'unsafe-inline'",
+#   "https://www.google-analytics.com",
+#   "https://cdn.jsdelivr.net/",
+# ]
+# prefetchsrc = ["'self'"]
+# # connect-src directive – defines valid targets for to XMLHttpRequest (AJAX), WebSockets or EventSource
+# connectsrc = ["'self'", "https://www.google-analytics.com"]
+
+[taxonomies]
+category = "categories"
+series = "series"
+tag = "tags"
+author = "authors"
+
+[[params.social]]
+name = "Github"
+icon = "fa fa-2x fa-github"
+weight = 1
+url = "https://github.com/ndrshnsn/"
+
+[[params.social]]
+name = "Mastodon"
+icon = "fa fa-2x fa-mastodon"
+weight = 2
+url = "https://mastodon.social/@ndrshnsn"
+
+[[params.social]]
+name = "Twitter"
+icon = "fa fa-2x fa-twitter"
+weight = 3
+url = "https://twitter.com/ndrshnsn/"
+
+[[params.social]]
+name = "LinkedIn"
+icon = "fa fa-2x fa-linkedin"
+weight = 4
+url = "https://www.linkedin.com/in/ndrshnsn/"
+
+[[params.social]]
+name = "RSS"
+icon = "fa fa-2x fa-rss"
+weight = 5
+url = "https://andreashansen.dev/index.xml"
+rel = "alternate"
+type = "application/rss+xml"
+
+[languages.en]
+languageName = ":uk:"
+
+[[languages.en.menu.main]]
+name = "About"
+weight = 1
+url = "about/"
+
+[[languages.en.menu.main]]
+name = "Blog"
+weight = 2
+url = "posts/"
+
+[[languages.en.menu.main]]
+name = "Projects"
+weight = 3
+url = "projects/"
+
+[[languages.en.menu.main]]
+name = "Contact me"
+weight = 5
+url = "contact/"
+
+[languages.pt-br]
+languageName = ":brazil:"
+title = "João Ninguém"
+
+[languages.pt-br.params]
+author = "João Ninguém"
+info = "Full Stack DevOps e Mágico"
+description = "Sítio pessoal de João Ninguém"
+keywords = "blog,desenvolvedor,pessoal"
+
+[[languages.pt-br.menu.main]]
+name = "Sobre"
+weight = 1
+url = "about/"
+
+[[languages.pt-br.menu.main]]
+name = "Blog"
+weight = 2
+url = "posts/"
+
+[[languages.pt-br.menu.main]]
+name = "Projetos"
+weight = 3
+url = "projects/"
+
+[[languages.pt-br.menu.main]]
+name = "Contato"
+weight = 5
+url = "contact/"

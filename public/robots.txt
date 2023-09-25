@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://andreas.com.br/sitemap.xml

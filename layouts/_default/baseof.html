@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+
+<head>
+  <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+  {{ partial "head.html" . }}
+</head>
+
+{{ $csClass := "colorscheme-light" }}
+{{ if eq .Site.Params.colorScheme "dark" }}
+{{ $csClass = "colorscheme-dark" }}
+{{ else if eq .Site.Params.colorScheme "auto" }}
+{{ $csClass = "colorscheme-auto" }}
+{{ end }}
+
+<body class="preload-transitions {{ $csClass }}{{ if .Site.Params.rtl }} rtl{{ end }}">
+  {{ partial "float" . }}
+  <main class="wrapper">
+    {{/* partial "header.html" . */}}
+
+    <div class="content">
+      {{ block "content" . }}{{ end }}
+    </div>
+
+    {{ partial "footer.html" . }}
+  </main>
+
+  {{ if .HasShortcode "mermaid" }}
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js"
+    integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin="anonymous"></script>
+  <script>
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+  {{ end }}
+
+  {{ if .Site.IsServer }}
+  {{ $script := resources.Get "js/coder.js" }}
+  <script src="{{ $script.RelPermalink }}"></script>
+  {{ else }}
+  {{ $script := resources.Get "js/coder.js" | minify | fingerprint }}
+  <script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}"></script>
+  {{ end }}
+
+  {{ range .Site.Params.customJS }}
+  {{ if $.Site.IsServer }}
+  {{ $script := resources.Get . }}
+  <script src="{{ $script.RelPermalink }}"></script>
+  {{ else }}
+  {{ $script := resources.Get . | minify | fingerprint }}
+  <script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}"></script>
+  {{ end }}
+  {{ end }}
+
+  {{ range .Site.Params.customRemoteJS }}
+  {{ if $.Site.IsServer }}
+  {{ $script := resources.GetRemote . }}
+  <script src="{{ $script.RelPermalink }}"></script>
+  {{ else }}
+  {{ $script := resources.GetRemote . | minify | fingerprint }}
+  <script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}"></script>
+  {{ end }}
+  {{ end }}
+
+
+  {{ template "_internal/google_analytics.html" . }}
+
+  {{- partial "body/extensions" . -}}
+</body>
+
+</html>
