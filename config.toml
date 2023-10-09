@@ -15,7 +15,7 @@ author = "Andreas Hansen"
 # license = '<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA-4.0</a>'
 description = "Full Stack Developer"
 keywords = "blog,developer,personal"
-info = ["Software Developer", "Coffee & Open Source Addict", "#ruby • #rails • #hotwire"]
+info = ["Software Engineer", "Coffee & Open Source Addict", "#ruby • #rails • #hotwire"]
 gravatar = "ndrshnsn@gmail.com"
 dateFormat = "January 2, 2006"
 since = 2012
